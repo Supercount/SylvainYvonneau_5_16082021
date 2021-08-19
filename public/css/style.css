@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "AbhayaLibre";
+  src: url("../../fonts/abhaya-libre/AbhayaLibre-Bold.ttf") format("truetype"), url("../../fonts/abhaya-libre/AbhayaLibre-ExtraBold.ttf") format("truetype"), url("../../fonts/abhaya-libre/AbhayaLibre-Medium.ttf") format("truetype"), url("../../fonts/abhaya-libre/AbhayaLibre-Regular.ttf") format("truetype"), url("../../fonts/abhaya-libre/AbhayaLibre-SemiBold.ttf") format("truetype");
+}
+body {
+  font-family: "AbhayaLibre", sans-serif;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.head {
+  background-color: #1b61ee;
+  margin-top: 0;
+  padding: 20px;
+  padding-left: 30px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.head__logo {
+  max-width: 150px;
+  border-radius: 20px;
+}
+.head__nav {
+  margin: 0;
+  padding-top: 10px;
+  list-style-type: none;
+  justify-self: right;
+  display: flex;
+  flex-direction: row;
+}
+.head__nav a {
+  font-size: 24px;
+  color: white;
+}
+.head__nav__link {
+  font-size: 20px;
+  padding-right: 20px;
+}
+
+.foot {
+  background-color: #1b61ee;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+.foot__list {
+  list-style-type: none;
+  padding: 0;
+  min-width: 120px;
+  color: white;
+}
+.foot__list p {
+  font-size: 25px;
+  margin: 0;
+}
+.foot__list--row {
+  border-radius: 15px;
+  display: flex;
+  font-size: 30px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  background-color: #f0a608;
+}
+.foot__link {
+  position: relative;
+  top: 3px;
+}
+.foot__link.socials {
+  color: #1b61ee;
+}
+
+/*# sourceMappingURL=style.css.map */

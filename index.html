@@ -9,27 +9,34 @@
 </head>
 
 <body>
-    <header>
-        <a href="index.html">Mettre le logo ici</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="panier.html">Panier</a></li>
-            </ul>
-        </nav>
+    <header class="head">
+        <div>
+            <a href="index.html" class="head__nav__link"><img src="./images/logo.png" alt="logo Onorico" class="head__logo"></a>
+        </div>
+        <ul class="head__nav">
+            <li><a href="panier.html" class="head__nav__link">Panier</a></li>
+        </ul>
     </header>
     <main>
         <h1>Bienvenue sur le site Orinoco de vente en ligne</h1>
-        <article> Bloc pour le produit 1</article>
-        <article> Bloc pour le produit 2</article>
-        <article> Bloc pour le produit 3</article>
-        <article> Bloc pour le produit 4</article>
-        <article> Bloc pour le produit 5</article>
+        <section>
+            <article>Bloc pour le produit 1</article>
+            <article>Bloc pour le produit 2</article>
+            <article>Bloc pour le produit 3</article>
+            <article>Bloc pour le produit 4</article>
+            <article>Bloc pour le produit 5</article>
+        </section>
     </main>
-    <footer>
-        <ul>
-            <li><a href="#">Lien Facebook</a></li>
-            <li><a href="#">Lien Twitter</a></li>
+    <footer class="foot">
+        <ul class="foot__list">
+            <li><p class="foot_title">Oniroco</p></li>
+            <li><a href="#" class="foot__link">Conditions de ventes</a></li>
+            <li><a href="mailto:contact@onorico.com" class="foot__link">Contact</a></li>
+        </ul>
+        <ul class="foot__list foot__list--row">
+            <li><a href="#" class="foot__link socials"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#" class="foot__link socials"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" class="foot__link socials"><i class="fab fa-instagram"></i></a></li>
         </ul>
     </footer>
 </body>

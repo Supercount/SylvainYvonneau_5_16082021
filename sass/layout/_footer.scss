@@ -1,0 +1,33 @@
+.foot {
+    background-color: $couleur-primaire;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        min-width: 120px;
+        color: white;
+        p {
+            font-size: 25px;
+            margin: 0;
+        }
+        &--row {
+            border-radius: 15px;
+            display: flex;
+            font-size: 30px;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5px;
+            background-color: $couleur-secondaire;
+        }
+    }
+    &__link {
+        position: relative;
+        top: 3px;
+        &.socials {
+            color: $couleur-primaire;
+        }
+    }
+}
