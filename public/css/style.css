@@ -15,7 +15,7 @@ a {
 }
 
 .head {
-  background-color: #1b61ee;
+  background-color: #3564c2;
   margin-top: 0;
   padding: 20px;
   padding-left: 30px;
@@ -28,7 +28,7 @@ a {
 }
 .head__logo {
   max-width: 150px;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 .head__nav {
   margin: 0;
@@ -48,16 +48,18 @@ a {
 }
 
 .foot {
-  background-color: #1b61ee;
+  background-color: #3564c2;
   margin-bottom: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 20px;
 }
 .foot__list {
   list-style-type: none;
   padding: 0;
-  min-width: 120px;
+  min-width: 150px;
   color: white;
 }
 .foot__list p {
@@ -71,14 +73,38 @@ a {
   justify-content: space-around;
   align-items: center;
   padding: 5px;
-  background-color: #f0a608;
+  background-color: #f3e9f1;
 }
 .foot__link {
   position: relative;
   top: 3px;
 }
 .foot__link.socials {
-  color: #1b61ee;
+  color: #3564c2;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.menu__element {
+  margin: 5px;
+  min-width: 20%;
+  max-width: 30%;
+  border: #3564c2 2px solid;
+  border-radius: 20px;
+}
+.menu__element__description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #3564c2;
+  color: white;
+  border-radius: 0 0 15px 15px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
