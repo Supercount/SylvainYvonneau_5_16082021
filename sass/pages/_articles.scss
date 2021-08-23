@@ -3,12 +3,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: auto;
+    width: 90%;
     &__element {
         margin: 5px;
+        margin-bottom: 30px;
         min-width: 20%;
         max-width: 30%;
         border: $couleur-primaire 2px solid;
         border-radius: 20px;
+        &__image {
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+        }
         &__description {
             display: flex;
             flex-direction: row;
