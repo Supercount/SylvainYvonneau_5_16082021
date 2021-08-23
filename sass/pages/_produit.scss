@@ -1,0 +1,28 @@
+.produit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 300px;
+    &__bloc {
+        width: 50%;
+        text-align: center;
+        &--description {
+            text-align: left;
+            max-width: 40%;
+            padding: 10px;
+            margin: auto;
+            background-color: $couleur-secondaire;
+            border-radius: 20px;
+        }
+        &__image {
+            border-radius: 20px;
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            width: 50%;
+            margin: auto;
+            margin-bottom: -5px;
+        }
+    }
+}
