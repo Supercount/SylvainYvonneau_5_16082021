@@ -4,10 +4,10 @@ const urlParams = new URLSearchParams (queryString);
 
 //Récupération de l'id du produit depuis les paramètres
 const id_produit = urlParams.get('id');
-console.log(id_produit);
 
 var bloc = document.getElementById("produit");
 
+import {ajouterPanier} from panier.js;
 
 fetch(`http://localhost:3000/api/cameras/${id_produit}`).then(function(res) {
 if (res.ok) {
@@ -27,18 +27,21 @@ if (res.ok) {
             <h1 class="produit__bloc__nom">${nom}</h1>
             <p class="produit__bloc__description">${description}</p>
             <p class="produit__bloc__prix">${prix} €</p>
-            <form action="">
-                Choix de la lentille <select name="personnalisation" id="personnalisation">
-                </select>
-                <p>Quantité voulue <input type="number" min="1" value="1"></p>
-                <input type="button" value="Ajouter">
+            <form action="" method="get" class="produit__bloc__form">
+                <label for="choix" class="produit__bloc__form__choix">Choix de la lentille </label>
+                <select name="personnalisation" id="personnalisation" class="produit__bloc__form__choix"></select>
+                <label for="quantite" class="produit__bloc__form__choix">Quantité voulue </label>
+                <input id="quantite" type="number" min="1" value="1" class="produit__bloc__form__choix">
+                <div class="produit__bloc__form__boutons">
+                    <input type="button" value="Ajouter" class="produit__bloc__form__valid produit__bloc__form__boutons__press" id="valider">
+                    <a href="index.html" class="produit__bloc__form__retour produit__bloc__form__boutons__press">Accueil</a>
+                </div>
             </form>
         </div>`;
 
     lensesList.forEach(lens => {
-        var choiceLens = document.createElement('option');
-        choiceLens.innerHTML = lens;
-        document.getElementById("personnalisation").appendChild(choiceLens);
+        var choice = document.createElement('option');
+        choice.innerHTML = lens;
+        document.getElementById("personnalisation").appendChild(choice);
     });
-    console.log(data);
 });

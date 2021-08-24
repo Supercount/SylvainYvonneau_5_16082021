@@ -3,24 +3,55 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-height: 300px;
+    font-size: 18px;
     &__bloc {
         width: 50%;
         text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
         &--description {
             text-align: left;
             max-width: 40%;
-            padding: 10px;
+            padding: 20px;
             margin: auto;
             background-color: $couleur-secondaire;
             border-radius: 20px;
+        }
+        &__form {
+            display: flex;
+            flex-direction: column;
+            &__choix {
+                margin: 5px;
+                width: 30%;
+            }
+            &__boutons {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                &__press {
+                    background-color: $couleur-tertiaire;
+                    border: transparent solid 2px;
+                    color: white;
+                    font-weight: bold;
+                    font-family: "AbhayaLibre", sans-serif;
+                    font-size: 20px;
+                    cursor: pointer;
+                    padding: 5px;
+                    border-radius: 15px;
+                    box-shadow: grey 5px 5px 5px;
+                    transition: all 500ms cubic-bezier(.53,.61,.28,.92);
+                    &:hover {
+                        background-color: $couleur-primaire;
+                    }
+                }
+            }
         }
         &__image {
             border-radius: 20px;
             max-height: 100%;
             max-width: 100%;
             object-fit: cover;
-            width: 50%;
+            max-width: 80%;
             margin: auto;
             margin-bottom: -5px;
         }

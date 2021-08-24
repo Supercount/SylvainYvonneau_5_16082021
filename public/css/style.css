@@ -4,9 +4,16 @@
 }
 body {
   font-family: "AbhayaLibre", sans-serif;
+  height: 100%;
   width: 100%;
-  min-height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+html {
+  height: 100%;
 }
 
 a {
@@ -53,11 +60,10 @@ h1 {
 
 .foot {
   background-color: #8f5bfe;
-  margin-bottom: 0;
   display: flex;
   justify-content: space-between;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
   font-size: 20px;
 }
 .foot__list {
@@ -95,6 +101,13 @@ h1 {
   margin: auto;
   width: 90%;
 }
+.menu__lien {
+  display: block;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .menu__element {
   margin: 5px;
   margin-bottom: 30px;
@@ -102,26 +115,24 @@ h1 {
   max-width: 30%;
   border: #8f5bfe 2px solid;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 .menu__element__image {
   object-fit: cover;
-  border-radius: 20px 20px 0 0;
+  border-radius: 18px 18px 0 0;
   width: 100%;
   margin-bottom: -8px;
+  flex: 1;
 }
 .menu__element__description {
-  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #8f5bfe;
   color: white;
   border-radius: 0 0 15px 15px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 18px;
 }
 
 .produit {
@@ -129,26 +140,57 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 300px;
+  font-size: 18px;
 }
 .produit__bloc {
   width: 50%;
   text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .produit__bloc--description {
   text-align: left;
   max-width: 40%;
-  padding: 10px;
+  padding: 20px;
   margin: auto;
   background-color: #f3e9f1;
   border-radius: 20px;
+}
+.produit__bloc__form {
+  display: flex;
+  flex-direction: column;
+}
+.produit__bloc__form__choix {
+  margin: 5px;
+  width: 30%;
+}
+.produit__bloc__form__boutons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.produit__bloc__form__boutons__press {
+  background-color: #e58a0b;
+  border: transparent solid 2px;
+  color: white;
+  font-weight: bold;
+  font-family: "AbhayaLibre", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: grey 5px 5px 5px;
+  transition: all 500ms cubic-bezier(0.53, 0.61, 0.28, 0.92);
+}
+.produit__bloc__form__boutons__press:hover {
+  background-color: #8f5bfe;
 }
 .produit__bloc__image {
   border-radius: 20px;
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
-  width: 50%;
+  max-width: 80%;
   margin: auto;
   margin-bottom: -5px;
 }
