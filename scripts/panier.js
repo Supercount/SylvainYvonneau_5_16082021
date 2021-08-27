@@ -6,7 +6,7 @@ const urlParams = new URLSearchParams (queryString);
 const id_produit = urlParams.get('id');
 
 // On vérifie si l'élément est déjà dans le panier
-function existeDansPanier (id_check,lens_check) {
+export function existeDansPanier (id_check,lens_check) {
     var present = false;
     var panier_json = sessionStorage.getItem("panier");
     var panier = JSON.parse(panier_json);
@@ -36,5 +36,10 @@ export function ajouterPanier (itemLens,quantity) {
         panier.push(nouvelItem);
     }
     var newPanier = JSON.stringify(panier);
+    console.log(newPanier);
     sessionStorage.setItem("panier",newPanier);
+}
+
+export function viderPanier() {
+    sessionStorage.clear();
 }

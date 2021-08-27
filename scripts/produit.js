@@ -1,3 +1,5 @@
+// import ajouterPanier from "./panier.js";
+
 //Récupération des paramètres dans l'URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams (queryString);
@@ -6,8 +8,6 @@ const urlParams = new URLSearchParams (queryString);
 const id_produit = urlParams.get('id');
 
 var bloc = document.getElementById("produit");
-
-import {ajouterPanier} from panier.js;
 
 fetch(`http://localhost:3000/api/cameras/${id_produit}`).then(function(res) {
 if (res.ok) {
@@ -34,7 +34,7 @@ if (res.ok) {
                 <input id="quantite" type="number" min="1" value="1" class="produit__bloc__form__choix">
                 <div class="produit__bloc__form__boutons">
                     <input type="button" value="Ajouter" class="produit__bloc__form__valid produit__bloc__form__boutons__press" id="valider">
-                    <a href="index.html" class="produit__bloc__form__retour produit__bloc__form__boutons__press">Accueil</a>
+                    <a href="index.html" class="produit__bloc__form__retour produit__bloc__form__boutons__press">Retour</a>
                 </div>
             </form>
         </div>`;
@@ -44,4 +44,15 @@ if (res.ok) {
         choice.innerHTML = lens;
         document.getElementById("personnalisation").appendChild(choice);
     });
+    //on récupère la lentille personnalisée
+    var lentille = "";
+    document.getElementById("personnalisation").addEventListener("change", function() {
+        lentille = this.value;
+    });
+    //on récupère la lentille personnalisée
+    var quantity = 0;
+    document.getElementById("quantite").addEventListener("change", function() {
+        quantity = this.value;
+    });
+    document.getElementById("valider").addEventListener("click",ajouterPanier(lentille,quantity));
 });
