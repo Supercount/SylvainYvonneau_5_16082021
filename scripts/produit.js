@@ -26,7 +26,7 @@ if (res.ok) {
         <div class="produit__bloc--description produit__bloc">
             <h1 class="produit__bloc__nom">${nom}</h1>
             <p class="produit__bloc__description">${description}</p>
-            <p class="produit__bloc__prix">${prix} €</p>
+            <p class="produit__bloc__prix">${prix},00 €</p>
             <form action="" method="get" class="produit__bloc__form">
                 <label for="choix" class="produit__bloc__form__choix">Choix de la lentille </label>
                 <select name="personnalisation" id="personnalisation" class="produit__bloc__form__choix"></select>
@@ -42,6 +42,7 @@ if (res.ok) {
     lensesList.forEach(lens => {
         var choice = document.createElement('option');
         choice.innerHTML = lens;
+        choice.value = lens;
         document.getElementById("personnalisation").appendChild(choice);
     });
     //on récupère la lentille personnalisée
@@ -54,5 +55,7 @@ if (res.ok) {
     document.getElementById("quantite").addEventListener("change", function() {
         quantity = this.value;
     });
-    document.getElementById("valider").addEventListener("click",ajouterPanier(lentille,quantity));
+    lentille = document.getElementById("personnalisation").value;
+    quantity = document.getElementById("quantite").value;
+    document.getElementById("valider").addEventListener("click",function() {ajouterPanier(id_produit,lentille,quantity)});
 });
