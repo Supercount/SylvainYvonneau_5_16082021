@@ -38,7 +38,8 @@ if (contenuPanier == null) {
         </table>
     `;
     let total = 0;
-    listePanier.forEach(element => {
+    var liste_envoi = [];
+    listePanier.forEach((element,index) => {
         const identifiant = element.id;
         const lentille = element.lens;
         const nombre = element.quantite;
@@ -58,13 +59,12 @@ if (contenuPanier == null) {
                 <td>${prix},00 €</td>`;
             tableau.appendChild(newLine);
             total += prix;
-            console.log("sur l'élément : " + total);
+            liste_envoi.push(identifiant);
             var bloc_fin = document.getElementById("bandeau_fin");
             bloc_fin.innerHTML = `<p>Montant total  <strong>${total},00 €</strong></p>`;
+            sessionStorage.setItem("total",total);
         });
-        console.log("dans la boucle : " + total);
     });
-    console.log("hors de la boucle : " + total);
     var bouton_reset = document.createElement("a");
     bouton_reset.setAttribute("id","reset");
     bouton_reset.setAttribute("href","panier.html");
@@ -74,7 +74,6 @@ if (contenuPanier == null) {
 
     bouton_reset.addEventListener("click",function() {
         viderPanier()
-
     })
     
 }
@@ -83,9 +82,14 @@ var bouton_envoi = document.getElementById("confirm");
 
 bouton_envoi.addEventListener("click", function() {
     firstName = document.getElementById("firstName").value;
+    console.log(`firstName : ${firstName}`);
     lastName = document.getElementById("lastName").value;
+    console.log(`lastName : ${lastName}`);
     adress = document.getElementById("adress").value;
+    console.log(`adress : ${adress}`);
     city = document.getElementById("city").value;
+    console.log(`city : ${city}`);
     email = document.getElementById("email").value;
-    envoi_formulaire(firstName,lastName,adress,city,email,panier);
+    console.log(`email : ${email}`);
+    envoi_formulaire(firstName,lastName,adress,city,email,liste_envoi);
 })

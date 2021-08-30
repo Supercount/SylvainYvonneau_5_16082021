@@ -216,6 +216,7 @@ h1 {
 }
 .panier__bandeau--haut {
   border-radius: 15px 15px 0 0;
+  margin-top: 20px;
 }
 .panier__bandeau--bas {
   border-radius: 0 0 15px 15px;
@@ -266,7 +267,9 @@ h1 {
   margin-top: 40px;
 }
 .formulaire__bandeau--bas {
+  height: 30px;
   border-radius: 0 0 15px 15px;
+  margin-bottom: 20px;
 }
 .formulaire__bandeau h2 {
   margin: 0;
