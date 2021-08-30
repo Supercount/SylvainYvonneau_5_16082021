@@ -11,6 +11,7 @@ if (contenuPanier == null) {
         </div>
         <div class="panier__contenu">
             <p>Votre Panier est vide!</p>
+            <a href="index.html" class="bouton">Retour à l'accueil</a>
         </div>
         <div class="panier__bandeau bandeau">
         </div>`;
@@ -59,20 +60,27 @@ if (contenuPanier == null) {
             total += prix;
             console.log("sur l'élément : " + total);
             var bloc_fin = document.getElementById("bandeau_fin");
-            bloc_fin.innerHTML = `<p>Montant total  ${total},00 €</p>`;
+            bloc_fin.innerHTML = `<p>Montant total  <strong>${total},00 €</strong></p>`;
         });
         console.log("dans la boucle : " + total);
     });
     console.log("hors de la boucle : " + total);
-    var bouton_reset = document.createElement("input");
+    var bouton_reset = document.createElement("a");
     bouton_reset.setAttribute("id","reset");
-    bouton_reset.setAttribute("type","button");
-    bouton_reset.setAttribute("value","Vider le panier");
+    bouton_reset.setAttribute("href","panier.html");
+    bouton_reset.innerText= "Vider le panier";
     bouton_reset.setAttribute("class","panier__reset bouton");
     bloc.appendChild(bouton_reset);
 
+    bouton_reset.addEventListener("click",function() {
+        viderPanier()
 
-    /*
-        ajouter le formulaire d'envoi de la commande
-    */
+    })
+    
 }
+
+var bouton_envoi = document.getElementById("confirm");
+
+bouton_envoi.addEventListener("click", function() {
+    envoi_formulaire();
+})

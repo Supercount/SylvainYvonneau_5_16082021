@@ -1,0 +1,44 @@
+.panier {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    &_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    &__bandeau {
+        background-color: $couleur-primaire;
+        color: white;
+        border-radius: 15px;
+        min-height: 30px;
+    }
+    &__contenu__table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.formulaire {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    &__contenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 200px;
+        margin: auto;
+        input {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    &__bandeau {
+        background-color: $couleur-primaire;
+        color: white;
+        border-radius: 15px;
+    }
+}

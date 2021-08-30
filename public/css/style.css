@@ -7,6 +7,8 @@
   border: transparent solid 2px;
   color: white;
   font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-family: "AbhayaLibre", sans-serif;
   font-size: 20px;
   cursor: pointer;
@@ -194,6 +196,51 @@ h1 {
   max-width: 80%;
   margin: auto;
   margin-bottom: -5px;
+}
+
+.panier {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+}
+.panier_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.panier__bandeau {
+  background-color: #8f5bfe;
+  color: white;
+  border-radius: 15px;
+  min-height: 30px;
+}
+.panier__contenu__table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.formulaire {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+}
+.formulaire__contenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 200px;
+  margin: auto;
+}
+.formulaire__contenu input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.formulaire__bandeau {
+  background-color: #8f5bfe;
+  color: white;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
