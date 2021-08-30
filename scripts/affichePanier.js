@@ -3,26 +3,26 @@ let blocPanier = document.getElementById("panier");
 var contenuPanier = sessionStorage.getItem("panier");
 var panier = contenuPanier===null?[]:JSON.parse(contenuPanier);
 console.log(contenuPanier);
-var total = 0;
 
 if (contenuPanier == null) {
     blocPanier.innerHTML = `
-        <div class="panier__bandeau">
+        <div class="panier__bandeau bandeau">
             <h1>Votre panier</h1>
         </div>
         <div class="panier__contenu">
             <p>Votre Panier est vide!</p>
         </div>
-        <div class="panier__bandeau">
+        <div class="panier__bandeau bandeau">
         </div>`;
+    document.getElementById("formulaire").innerHTML = "";
 } else {
     blocPanier.innerHTML = `
-        <div class="panier__bandeau">
+        <div class="panier__bandeau bandeau">
             <h1>Votre panier</h1>
         </div>
         <div class="panier__contenu" id="liste_panier">
         </div>
-        <div class="panier__bandeau" id="bandeau_fin">
+        <div class="panier__bandeau bandeau" id="bandeau_fin">
         </div>`;
     var bloc = document.getElementById("liste_panier");
     var listePanier = JSON.parse(contenuPanier);
@@ -36,6 +36,7 @@ if (contenuPanier == null) {
         </tr>
         </table>
     `;
+    let total = 0;
     listePanier.forEach(element => {
         const identifiant = element.id;
         const lentille = element.lens;
@@ -47,7 +48,6 @@ if (contenuPanier == null) {
         }).then(function(data) {
             const nom = data.name;
             const prix = nombre*data.price/100;
-            total += prix;
             var tableau = document.getElementById("tableau");
             var newLine = document.createElement("tr");
             newLine.classList.add("panier__contenu__table__ligne");
@@ -56,17 +56,20 @@ if (contenuPanier == null) {
                 <td>${nombre}</td>
                 <td>${prix},00 €</td>`;
             tableau.appendChild(newLine);
+            total += prix;
+            console.log("sur l'élément : " + total);
+            var bloc_fin = document.getElementById("bandeau_fin");
+            bloc_fin.innerHTML = `<p>Montant total  ${total},00 €</p>`;
         });
+        console.log("dans la boucle : " + total);
     });
+    console.log("hors de la boucle : " + total);
     var bouton_reset = document.createElement("input");
     bouton_reset.setAttribute("id","reset");
     bouton_reset.setAttribute("type","button");
     bouton_reset.setAttribute("value","Vider le panier");
-    bouton_reset.setAttribute("class","panier__reset");
+    bouton_reset.setAttribute("class","panier__reset bouton");
     bloc.appendChild(bouton_reset);
-    var bloc_fin = document.getElementById("bandeau_fin");
-    bloc_fin.innerHTML = `<p>Montant total  ${total},00 €</p>`;
-
 
 
     /*

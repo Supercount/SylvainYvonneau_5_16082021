@@ -33,8 +33,8 @@ if (res.ok) {
                 <label for="quantite" class="produit__bloc__form__choix">Quantité voulue </label>
                 <input id="quantite" type="number" min="1" value="1" class="produit__bloc__form__choix">
                 <div class="produit__bloc__form__boutons">
-                    <input type="button" value="Ajouter" class="produit__bloc__form__valid produit__bloc__form__boutons__press" id="valider">
-                    <a href="index.html" class="produit__bloc__form__retour produit__bloc__form__boutons__press">Retour</a>
+                    <input type="button" value="Ajouter" class="produit__bloc__form__valid bouton" id="valider">
+                    <a href="index.html" class="produit__bloc__form__retour bouton">Retour</a>
                 </div>
             </form>
         </div>`;

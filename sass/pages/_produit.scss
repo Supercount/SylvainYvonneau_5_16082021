@@ -28,22 +28,6 @@
                 margin-top: 10px;
                 display: flex;
                 justify-content: space-between;
-                &__press {
-                    background-color: $couleur-tertiaire;
-                    border: transparent solid 2px;
-                    color: white;
-                    font-weight: bold;
-                    font-family: "AbhayaLibre", sans-serif;
-                    font-size: 20px;
-                    cursor: pointer;
-                    padding: 5px;
-                    border-radius: 15px;
-                    box-shadow: grey 5px 5px 5px;
-                    transition: all 500ms cubic-bezier(.53,.61,.28,.92);
-                    &:hover {
-                        background-color: $couleur-primaire;
-                    }
-                }
             }
         }
         &__image {
