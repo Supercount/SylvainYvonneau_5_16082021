@@ -6,24 +6,24 @@ console.log(contenuPanier);
 
 if (contenuPanier == null) {
     blocPanier.innerHTML = `
-        <div class="panier__bandeau bandeau">
+        <div class="panier__bandeau panier__bandeau--haut">
             <h1>Votre panier</h1>
         </div>
         <div class="panier__contenu">
             <p>Votre Panier est vide!</p>
             <a href="index.html" class="bouton">Retour à l'accueil</a>
         </div>
-        <div class="panier__bandeau bandeau">
+        <div class="panier__bandeau formulaire__bandeau--bas">
         </div>`;
     document.getElementById("formulaire").innerHTML = "";
 } else {
     blocPanier.innerHTML = `
-        <div class="panier__bandeau bandeau">
+        <div class="panier__bandeau panier__bandeau--haut">
             <h1>Votre panier</h1>
         </div>
         <div class="panier__contenu" id="liste_panier">
         </div>
-        <div class="panier__bandeau bandeau" id="bandeau_fin">
+        <div class="panier__bandeau formulaire__bandeau--bas" id="bandeau_fin">
         </div>`;
     var bloc = document.getElementById("liste_panier");
     var listePanier = JSON.parse(contenuPanier);
@@ -82,5 +82,10 @@ if (contenuPanier == null) {
 var bouton_envoi = document.getElementById("confirm");
 
 bouton_envoi.addEventListener("click", function() {
-    envoi_formulaire();
+    firstName = document.getElementById("firstName").value;
+    lastName = document.getElementById("lastName").value;
+    adress = document.getElementById("adress").value;
+    city = document.getElementById("city").value;
+    email = document.getElementById("email").value;
+    envoi_formulaire(firstName,lastName,adress,city,email,panier);
 })

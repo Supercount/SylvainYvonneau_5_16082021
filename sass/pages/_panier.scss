@@ -6,17 +6,36 @@
     &_content {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
     }
     &__bandeau {
         background-color: $couleur-primaire;
         color: white;
-        border-radius: 15px;
         min-height: 30px;
+        &--haut {
+            border-radius: 15px 15px 0 0;
+        }
+        &--bas {
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
     }
-    &__contenu__table {
-        width: 100%;
-        margin-bottom: 20px;
+    &__contenu {
+        background-color: $couleur-secondaire;
+        &__table {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    }
+    &__reset {
+        position: relative;
+        bottom: 25px;
     }
 }
 
@@ -26,19 +45,29 @@
     text-align: center;
     font-size: 18px;
     &__contenu {
+        background-color: $couleur-secondaire;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 200px;
-        margin: auto;
         input {
-            margin-top: 5px;
-            margin-bottom: 5px;
+            width: 200px;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     }
     &__bandeau {
         background-color: $couleur-primaire;
         color: white;
-        border-radius: 15px;
+        &--haut {
+            border-radius: 15px 15px 0 0;
+            margin-top: 40px;
+        }
+        &--bas {
+            border-radius: 0 0 15px 15px;
+        }
+        h2 {
+            margin: 0;
+        }
     }
 }
