@@ -1,0 +1,35 @@
+.retour {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    &__bandeau {
+        background-color: $couleur-primaire;
+        height: 30px;
+        &--haut {
+            border-radius: 15px 15px 0 0;
+        }
+        &--bas {
+            border-radius: 0 0 15px 15px;
+        }
+    }
+    &__texte {
+        background-color: $couleur-secondaire;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        p {
+            margin: 0;
+            font-size: 20px;
+            strong {
+                color: $couleur-tertiaire;
+                font-weight: bold;
+                font-size: 22px;
+            }
+        }
+        h1 {
+            font-size: 30px;
+            margin: 0;
+        }
+    }
+}

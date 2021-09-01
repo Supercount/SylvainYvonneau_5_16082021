@@ -27,29 +27,45 @@ function envoi_formulaire (prenom,nom,adresse,ville,mail,panier) {
     });
 }
 
-function valider_texte (valeur) {
-    return (valeur != "");
+function valider_prenom (valeur) {
+    var regex = /^[a-zA-ZÉÈÊÄÏéèêäï][\-a-zéèêäï]*$/ ;
+    return regex.test(valeur);
+}
+
+function valider_nom (valeur) {
+    var regex = /^[a-zA-ZÉÈÊÄÏéèêäï][a-zéèêäï]*$/ ;
+    return regex.test(valeur);
+}
+
+function valider_adresse (valeur) {
+    var regex = /^[1-9][0-9]*[ ][ a-zA-ZÉÈÊÄÏéèêäï]+$/ ;
+    return regex.test(valeur);
+}
+
+function valider_ville (valeur) {
+    var regex = /^[a-zA-ZÉÈÊÄÏéèêäï][ \-a-zéèêäï]*$/ ;
+    return regex.test(valeur);
 }
 
 function valider_mail (valeur) {
-    var regex = /^[a-z0-9]+([_\.-][a-z0-9]+)*@[a-z0-9]{4,10}[\.][a-z]{2,6}$/ ;
+    var regex = /^[a-z0-9]+([_|\.|-][a-z0-9]+)*@[a-z0-9]{4,10}[\.][a-z]{2,4}$/ ;
     return regex.test(valeur);
 }
 
 function valider_formulaire (prenom,nom,adresse,ville,mail) {
-    if (!valider_texte(prenom)) {
+    if (!valider_prenom(prenom)) {
         alert("Veuillez insérer un prénom valide");
         return false;
     }
-    if (!valider_texte(nom)) {
+    if (!valider_nom(nom)) {
         alert("Veuillez insérer un nom valide");
         return false;
     }
-    if (!valider_texte(adresse)) {
+    if (!valider_adresse(adresse)) {
         alert("Veuillez insérer une adresse valide");
         return false;
     }
-    if (!valider_texte(ville)) {
+    if (!valider_ville(ville)) {
         alert("Veuillez insérer une ville valide");
         return false;
     }

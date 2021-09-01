@@ -18,7 +18,7 @@
         }
         &--bas {
             border-radius: 0 0 15px 15px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         h1 {
             margin: 0;
@@ -29,6 +29,15 @@
     }
     &__contenu {
         background-color: $couleur-secondaire;
+        min-height: 100px;
+        padding-top: 30px;
+        p {
+            margin: 0;
+        }
+        &__retour {
+            position: relative;
+            top: 25px;
+        }
         &__table {
             width: 100%;
             margin-bottom: 40px;
@@ -62,7 +71,7 @@
         color: white;
         &--haut {
             border-radius: 15px 15px 0 0;
-            margin-top: 40px;
+            margin-top: 20px;
         }
         &--bas {
             height: 30px;

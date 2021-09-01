@@ -1,31 +1,14 @@
-let blocPanier = document.getElementById("panier");
-
 var contenuPanier = sessionStorage.getItem("panier");
 var panier = contenuPanier===null?[]:JSON.parse(contenuPanier);
 console.log(contenuPanier);
+var bloc = document.getElementById("liste_panier");
 
 if (contenuPanier == null) {
-    blocPanier.innerHTML = `
-        <div class="panier__bandeau panier__bandeau--haut">
-            <h1>Votre panier</h1>
-        </div>
-        <div class="panier__contenu">
+    bloc.innerHTML = `
             <p>Votre Panier est vide!</p>
-            <a href="index.html" class="bouton">Retour à l'accueil</a>
-        </div>
-        <div class="panier__bandeau panier__bandeau--bas">
-        </div>`;
+            <a href="index.html" class="bouton panier__contenu__retour">Retour à l'accueil</a>`;
     document.getElementById("formulaire").innerHTML = "";
 } else {
-    blocPanier.innerHTML = `
-        <div class="panier__bandeau panier__bandeau--haut">
-            <h1>Votre panier</h1>
-        </div>
-        <div class="panier__contenu" id="liste_panier">
-        </div>
-        <div class="panier__bandeau panier__bandeau--bas" id="bandeau_fin">
-        </div>`;
-    var bloc = document.getElementById("liste_panier");
     var listePanier = JSON.parse(contenuPanier);
     bloc.innerHTML = `
         <table class="panier__contenu__table" id="tableau">

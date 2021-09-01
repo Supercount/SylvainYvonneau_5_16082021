@@ -220,7 +220,7 @@ h1 {
 }
 .panier__bandeau--bas {
   border-radius: 0 0 15px 15px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .panier__bandeau h1 {
   margin: 0;
@@ -230,6 +230,15 @@ h1 {
 }
 .panier__contenu {
   background-color: #f3e9f1;
+  min-height: 100px;
+  padding-top: 30px;
+}
+.panier__contenu p {
+  margin: 0;
+}
+.panier__contenu__retour {
+  position: relative;
+  top: 25px;
 }
 .panier__contenu__table {
   width: 100%;
@@ -264,7 +273,7 @@ h1 {
 }
 .formulaire__bandeau--haut {
   border-radius: 15px 15px 0 0;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .formulaire__bandeau--bas {
   height: 30px;
@@ -272,6 +281,42 @@ h1 {
   margin-bottom: 20px;
 }
 .formulaire__bandeau h2 {
+  margin: 0;
+}
+
+.retour {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.retour__bandeau {
+  background-color: #8f5bfe;
+  height: 30px;
+}
+.retour__bandeau--haut {
+  border-radius: 15px 15px 0 0;
+}
+.retour__bandeau--bas {
+  border-radius: 0 0 15px 15px;
+}
+.retour__texte {
+  background-color: #f3e9f1;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.retour__texte p {
+  margin: 0;
+  font-size: 20px;
+}
+.retour__texte p strong {
+  color: #e58a0b;
+  font-weight: bold;
+  font-size: 22px;
+}
+.retour__texte h1 {
+  font-size: 30px;
   margin: 0;
 }
 
