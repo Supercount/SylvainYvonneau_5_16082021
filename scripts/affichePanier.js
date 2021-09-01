@@ -13,7 +13,7 @@ if (contenuPanier == null) {
             <p>Votre Panier est vide!</p>
             <a href="index.html" class="bouton">Retour à l'accueil</a>
         </div>
-        <div class="panier__bandeau formulaire__bandeau--bas">
+        <div class="panier__bandeau panier__bandeau--bas">
         </div>`;
     document.getElementById("formulaire").innerHTML = "";
 } else {
@@ -23,7 +23,7 @@ if (contenuPanier == null) {
         </div>
         <div class="panier__contenu" id="liste_panier">
         </div>
-        <div class="panier__bandeau formulaire__bandeau--bas" id="bandeau_fin">
+        <div class="panier__bandeau panier__bandeau--bas" id="bandeau_fin">
         </div>`;
     var bloc = document.getElementById("liste_panier");
     var listePanier = JSON.parse(contenuPanier);
@@ -91,5 +91,11 @@ bouton_envoi.addEventListener("click", function() {
     console.log(`city : ${city}`);
     email = document.getElementById("email").value;
     console.log(`email : ${email}`);
-    envoi_formulaire(firstName,lastName,adress,city,email,liste_envoi);
+    if (valider_formulaire(firstName,lastName,adress,city,email)) {
+        envoi_formulaire(firstName,lastName,adress,city,email,liste_envoi);
+        document.location.href="validation.html";
+    } else {
+        alert("Formulaire invalide");
+    }
+    
 })

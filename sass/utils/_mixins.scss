@@ -1,0 +1,23 @@
+@mixin over-mobile {
+    @media screen and (min-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+@mixin over-tablette {
+    @media screen and (min-width: map-get($breakpoints, tablette)){
+        @content;
+    }
+}
+
+@mixin over-ecran {
+    @media screen and (min-width: map-get($breakpoints, ecran)){
+        @content;
+    }
+}
+
+@mixin over-ecran_large {
+    @media screen and (min-width: map-get($breakpoints, ecran_large)){
+        @content;
+    }
+}

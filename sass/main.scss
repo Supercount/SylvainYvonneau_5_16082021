@@ -1,14 +1,12 @@
 @import "./utils/variables";
-//@import "./utils/mixins";
-//@import "./utils/keyframes";
+@import "./utils/mixins";
 @import "./base/fonts";
 
-//@import "./composants/titres";
 @import "./composants/boutons";
 @import "./layout/global";
 @import "./layout/header";
-//@import "./layout/menus";
 @import "./layout/footer";
 @import "./pages/articles";
 @import "./pages/produit";
 @import "./pages/panier";
+@import "./pages/validation";
