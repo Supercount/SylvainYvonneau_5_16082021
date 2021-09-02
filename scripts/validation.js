@@ -1,7 +1,7 @@
-var total = sessionStorage.getItem("total");
-var id_commande = sessionStorage.getItem("id_commande");
+let total = sessionStorage.getItem("total");
+let id_commande = sessionStorage.getItem("id_commande");
 
-var bloc_texte = document.getElementById("texte");
+let bloc_texte = document.getElementById("texte");
 
 bloc_texte.innerHTML = `
     <h1>Merci pour votre commande!</h1>

@@ -1,5 +1,5 @@
 function envoi_formulaire (prenom,nom,adresse,ville,mail,panier) {
-    var requete_envoi = {
+    let requete_envoi = {
         contact : {
             firstName : prenom,
             lastName : nom,
@@ -20,35 +20,34 @@ function envoi_formulaire (prenom,nom,adresse,ville,mail,panier) {
     }).then(function(reponse) {
         return reponse.json();
     }).then(function(retour) {
-        var id_commande = retour.orderId;
+        let id_commande = retour.orderId;
         sessionStorage.setItem("id_commande",id_commande);
         // sessionStorage.removeItem("panier");
-        console.log(id_commande);
     });
 }
 
 function valider_prenom (valeur) {
-    var regex = /^[a-zA-ZÉÈÊÄÏéèêäï][\-a-zéèêäï]*$/ ;
+    let regex = /^[a-zA-ZÉÈÊÄÏéèêäï][\-a-zéèêäï]*$/ ;
     return regex.test(valeur);
 }
 
 function valider_nom (valeur) {
-    var regex = /^[a-zA-ZÉÈÊÄÏéèêäï][a-zéèêäï]*$/ ;
+    let regex = /^[a-zA-ZÉÈÊÄÏéèêäï][a-zéèêäï]*$/ ;
     return regex.test(valeur);
 }
 
 function valider_adresse (valeur) {
-    var regex = /^[1-9][0-9]*[ ][ a-zA-ZÉÈÊÄÏéèêäï]+$/ ;
+    let regex = /^[1-9][0-9]*[ ][ a-zA-ZÉÈÊÄÏéèêäï]+$/ ;
     return regex.test(valeur);
 }
 
 function valider_ville (valeur) {
-    var regex = /^[a-zA-ZÉÈÊÄÏéèêäï][ \-a-zéèêäï]*$/ ;
+    let regex = /^[a-zA-ZÉÈÊÄÏéèêäï][ \-a-zéèêäï]*$/ ;
     return regex.test(valeur);
 }
 
 function valider_mail (valeur) {
-    var regex = /^[a-z0-9]+([_|\.|-][a-z0-9]+)*@[a-z0-9]{4,10}[\.][a-z]{2,4}$/ ;
+    let regex = /^[a-z0-9]+([_|\.|-][a-z0-9]+)*@[a-z0-9]{4,10}[\.][a-z]{2,4}$/ ;
     return regex.test(valeur);
 }
 

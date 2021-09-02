@@ -7,7 +7,7 @@ const urlParams = new URLSearchParams (queryString);
 //Récupération de l'id du produit depuis les paramètres
 const id_produit = urlParams.get('id');
 
-var bloc = document.getElementById("produit");
+let bloc = document.getElementById("produit");
 
 fetch(`http://localhost:3000/api/cameras/${id_produit}`).then(function(res) {
 if (res.ok) {
@@ -40,18 +40,18 @@ if (res.ok) {
         </div>`;
 
     lensesList.forEach(lens => {
-        var choice = document.createElement('option');
+        let choice = document.createElement('option');
         choice.innerHTML = lens;
         choice.value = lens;
         document.getElementById("personnalisation").appendChild(choice);
     });
     //on récupère la lentille personnalisée
-    var lentille = "";
+    let lentille = "";
     document.getElementById("personnalisation").addEventListener("change", function() {
         lentille = this.value;
     });
     //on récupère la lentille personnalisée
-    var quantity = 0;
+    let quantity = 0;
     document.getElementById("quantite").addEventListener("change", function() {
         quantity = this.value;
     });

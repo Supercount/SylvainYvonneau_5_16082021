@@ -1,15 +1,8 @@
-// //Récupération des paramètres dans l'URL
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams (queryString);
-
-// //Récupération de l'id du produit depuis les paramètres
-// const id_produit = urlParams.get('id');
-
 // On vérifie si l'élément est déjà dans le panier
 function existeDansPanier (id_check,lens_check) {
-    var present = false;
-    var panier_json = sessionStorage.getItem("panier");
-    var panier = panier_json===null?[]:JSON.parse(panier_json);
+    let present = false;
+    let panier_json = sessionStorage.getItem("panier");
+    let panier = panier_json===null?[]:JSON.parse(panier_json);
     panier.forEach(element => {
         if (element.id == id_check && element.lens == lens_check) {
             present = true;
@@ -20,8 +13,8 @@ function existeDansPanier (id_check,lens_check) {
 
 //On ajoute un élément dans le panier
 function ajouterPanier (id_produit,itemLens,quantity) {
-    var panier_json = sessionStorage.getItem("panier");
-    var panier = panier_json===null?[]:JSON.parse(panier_json);
+    let panier_json = sessionStorage.getItem("panier");
+    let panier = panier_json===null?[]:JSON.parse(panier_json);
     if (existeDansPanier(id_produit,itemLens)) {
         panier.forEach(element => {
             if (element.id == id_produit || element.lens == itemLens) {
@@ -36,8 +29,7 @@ function ajouterPanier (id_produit,itemLens,quantity) {
         };
         panier.push(nouvelItem);
     }
-    var newPanier = JSON.stringify(panier);
-    console.log(newPanier);
+    let newPanier = JSON.stringify(panier);
     sessionStorage.setItem("panier",newPanier);
 }
 

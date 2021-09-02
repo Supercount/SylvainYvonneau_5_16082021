@@ -7,7 +7,7 @@ fetch("http://localhost:3000/api/cameras").then(function(res) {
     }
 }).then(function(data) {
     data.forEach(produit => { //Pour chaque produit, création d'un bloc contenant ses informations
-        var newProduct = document.createElement("article");
+        let newProduct = document.createElement("article");
         newProduct.classList.add("menu__element");
         const id_produit = produit._id;
         const image_produit = produit.imageUrl;
