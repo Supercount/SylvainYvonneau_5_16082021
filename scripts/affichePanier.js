@@ -52,13 +52,16 @@ if (contenuPanier == null) {
             })
         });
     });
+    creer_reset_bouton(bloc);
+}
+
+function creer_reset_bouton (parent) {
     let bouton_reset = document.createElement("a");
     bouton_reset.setAttribute("id","reset");
     bouton_reset.setAttribute("href","panier.html");
     bouton_reset.innerText= "Vider le panier";
     bouton_reset.setAttribute("class","panier__reset bouton");
-    bloc.appendChild(bouton_reset);
-
+    parent.appendChild(bouton_reset);
     bouton_reset.addEventListener("click",function() {
         viderPanier()
     })

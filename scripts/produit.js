@@ -1,5 +1,3 @@
-// import ajouterPanier from "./panier.js";
-
 //Récupération des paramètres dans l'URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams (queryString);
@@ -57,5 +55,7 @@ if (res.ok) {
     });
     lentille = document.getElementById("personnalisation").value;
     quantity = document.getElementById("quantite").value;
-    document.getElementById("valider").addEventListener("click",function() {ajouterPanier(id_produit,lentille,quantity)});
+    document.getElementById("valider").addEventListener("click",function() {
+        ajouterPanier(id_produit,lentille,quantity)
+    });
 });
