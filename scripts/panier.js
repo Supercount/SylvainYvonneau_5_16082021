@@ -34,5 +34,13 @@ function ajouterPanier (id_produit,itemLens,quantity) {
 }
 
 function viderPanier() {
-    sessionStorage.clear();
+    sessionStorage.removeItem("panier");
+}
+
+function retirer_element_panier(index) {
+    let panier_json = sessionStorage.getItem("panier");
+    let panier = panier_json===null?[]:JSON.parse(panier_json);
+    panier.splice(index, 1);
+    let newPanier = JSON.stringify(panier);
+    sessionStorage.setItem("panier",newPanier);
 }

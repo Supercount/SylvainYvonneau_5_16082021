@@ -39,13 +39,17 @@ if (contenuPanier == null) {
                 <td>${lentille}</td>
                 <td>${nombre}</td>
                 <td>${prix},00 €</td>
-                <td><i class="fas fa-trash-alt" id="corbeille-${index}"></i></td>`;
+                <td><i class="fas fa-trash-alt corbeille" id="corbeille-${index}"></i></td>`;
             tableau.appendChild(newLine);
             total += prix;
             liste_envoi.push(identifiant);
             let bloc_fin = document.getElementById("bandeau_fin");
             bloc_fin.innerHTML = `<p>Montant total  <strong>${total},00 €</strong></p>`;
             sessionStorage.setItem("total",total);
+            document.getElementById(`corbeille-${index}`).addEventListener("click",function() {
+                retirer_element_panier(index);
+                document.location.href="panier.html";
+            })
         });
     });
     let bouton_reset = document.createElement("a");
@@ -58,7 +62,6 @@ if (contenuPanier == null) {
     bouton_reset.addEventListener("click",function() {
         viderPanier()
     })
-    
 }
 
 let bouton_envoi = document.getElementById("confirm");
@@ -75,5 +78,4 @@ bouton_envoi.addEventListener("click", function() {
     } else {
         alert("Formulaire invalide");
     }
-    
 })

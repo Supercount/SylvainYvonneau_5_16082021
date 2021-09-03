@@ -249,6 +249,10 @@ h1 {
   bottom: 25px;
 }
 
+.corbeille {
+  cursor: pointer;
+}
+
 .formulaire {
   width: 90%;
   margin: auto;

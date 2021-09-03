@@ -22,7 +22,7 @@ function envoi_formulaire (prenom,nom,adresse,ville,mail,panier) {
     }).then(function(retour) {
         let id_commande = retour.orderId;
         sessionStorage.setItem("id_commande",id_commande);
-        // sessionStorage.removeItem("panier");
+        sessionStorage.removeItem("panier");
     });
 }
 
