@@ -39,8 +39,10 @@ function listeId () {
     return liste_envoi;
 }
 
-function ajouterLigne(data, lentille, nombre, index) {
+function ajouterLigne(data, element, index) {
     const nom = data.name;
+    const lentille = element.lens;
+    const nombre = element.quantite;
     const prix = nombre*data.price/100;
     let tableau = document.getElementById("tableau");
     let newLine = document.createElement("tr");
@@ -102,11 +104,9 @@ if ( panier.length === 0) {
         </table>`;
     panier.forEach((element,index) => {
         const identifiant = element.id;
-        const lentille = element.lens;
-        const nombre = element.quantite;
         fetch(`http://localhost:3000/api/cameras/${identifiant}`)
         .then( res => res.json())
-        .then( data => ajouterLigne(data, lentille, nombre, index))
+        .then( data => ajouterLigne(data, element, index))
     });
     creerResetBouton(bloc);
     let bouton_envoi = document.getElementById("confirm");
