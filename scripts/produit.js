@@ -1,17 +1,18 @@
-//Récupération des paramètres dans l'URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams (queryString);
 
-//Récupération de l'id du produit depuis les paramètres
 const id_produit = urlParams.get('id');
 
 let bloc = document.getElementById("produit");
 
-fetch(`http://localhost:3000/api/cameras/${id_produit}`).then(function(res) {
-if (res.ok) {
-    return res.json();
+function ajouterLentille(lens){
+    let choice = document.createElement('option');
+    choice.innerHTML = lens;
+    choice.value = lens;
+    document.getElementById("personnalisation").appendChild(choice);
 }
-}).then(function(data) {
+
+function afficherProduit(data) {
     const image = data.imageUrl;
     const nom = data.name;
     const prix = data.price/100;
@@ -36,26 +37,27 @@ if (res.ok) {
                 </div>
             </form>
         </div>`;
+    lensesList.forEach(lens => ajouterLentille(lens));
+}
 
-    lensesList.forEach(lens => {
-        let choice = document.createElement('option');
-        choice.innerHTML = lens;
-        choice.value = lens;
-        document.getElementById("personnalisation").appendChild(choice);
-    });
-    //on récupère la lentille personnalisée
+function commanderProduit() {
     let lentille = "";
     document.getElementById("personnalisation").addEventListener("change", function() {
         lentille = this.value;
     });
-    //on récupère la lentille personnalisée
     let quantity = 0;
     document.getElementById("quantite").addEventListener("change", function() {
         quantity = this.value;
     });
     lentille = document.getElementById("personnalisation").value;
     quantity = document.getElementById("quantite").value;
-    document.getElementById("valider").addEventListener("click",function() {
-        ajouterPanier(id_produit,lentille,quantity)
-    });
-});
+    document.getElementById("valider").addEventListener("click", function() {ajouterPanier(id_produit,lentille,quantity)}
+    );
+}
+
+fetch(`http://localhost:3000/api/cameras/${id_produit}`)
+.then(res => res.json())
+.then( data => afficherProduit(data))
+.then( function() {commanderProduit()})
+
+    

@@ -1,4 +1,4 @@
-function envoi_formulaire (prenom,nom,adresse,ville,mail,panier) {
+function envoiFormulaire (prenom,nom,adresse,ville,mail,panier) {
     let requete_envoi = {
         contact : {
             firstName : prenom,
@@ -9,7 +9,6 @@ function envoi_formulaire (prenom,nom,adresse,ville,mail,panier) {
         },
         products : panier
     }
-    
     fetch("http://localhost:3000/api/cameras/order", {
         method: "POST",
         headers: { 
@@ -22,53 +21,53 @@ function envoi_formulaire (prenom,nom,adresse,ville,mail,panier) {
     }).then(function(retour) {
         let id_commande = retour.orderId;
         sessionStorage.setItem("id_commande",id_commande);
-        sessionStorage.removeItem("panier");
+        viderPanier();
     });
 }
 
-function valider_prenom (valeur) {
+function validerPrenom (valeur) {
     let regex = /^[a-zA-ZÉÈÊÄÏéèêäï][\-a-zéèêäï]*$/ ;
     return regex.test(valeur);
 }
 
-function valider_nom (valeur) {
+function validerNom (valeur) {
     let regex = /^[a-zA-ZÉÈÊÄÏéèêäï][a-zéèêäï]*$/ ;
     return regex.test(valeur);
 }
 
-function valider_adresse (valeur) {
+function validerAdresse (valeur) {
     let regex = /^[1-9][0-9]*[ ][ a-zA-ZÉÈÊÄÏéèêäï]+$/ ;
     return regex.test(valeur);
 }
 
-function valider_ville (valeur) {
+function validerVille (valeur) {
     let regex = /^[a-zA-ZÉÈÊÄÏéèêäï][ \-a-zéèêäï]*$/ ;
     return regex.test(valeur);
 }
 
-function valider_mail (valeur) {
+function validerMail (valeur) {
     let regex = /^[a-z0-9]+([_|\.|-][a-z0-9]+)*@[a-z0-9]{4,10}[\.][a-z]{2,4}$/ ;
     return regex.test(valeur);
 }
 
-function valider_formulaire (prenom,nom,adresse,ville,mail) {
-    if (!valider_prenom(prenom)) {
+function validerFormulaire (prenom,nom,adresse,ville,mail) {
+    if (!validerPrenom(prenom)) {
         alert("Veuillez insérer un prénom valide");
         return false;
     }
-    if (!valider_nom(nom)) {
+    if (!validerNom(nom)) {
         alert("Veuillez insérer un nom valide");
         return false;
     }
-    if (!valider_adresse(adresse)) {
+    if (!validerAdresse(adresse)) {
         alert("Veuillez insérer une adresse valide");
         return false;
     }
-    if (!valider_ville(ville)) {
+    if (!validerVille(ville)) {
         alert("Veuillez insérer une ville valide");
         return false;
     }
-    if (!valider_mail(mail)) {
+    if (!validerMail(mail)) {
         alert("Veuillez insérer un email valide");
         return false;
     }

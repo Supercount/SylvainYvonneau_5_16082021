@@ -1,4 +1,9 @@
-// On vérifie si l'élément est déjà dans le panier
+function recupererPanier () {
+    let contenuPanier = sessionStorage.getItem("panier");
+    let panier = contenuPanier===null?[]:JSON.parse(contenuPanier);
+    return panier;
+}
+
 function existeDansPanier (id_check,lens_check) {
     let present = false;
     let panier_json = sessionStorage.getItem("panier");
