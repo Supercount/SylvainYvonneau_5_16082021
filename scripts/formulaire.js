@@ -16,9 +16,9 @@ function envoiFormulaire (prenom,nom,adresse,ville,mail,panier) {
             'Content-Type': 'application/json' 
         },
         body: JSON.stringify(requete_envoi)
-    }).then(function(reponse) {
-        return reponse.json();
-    }).then(function(retour) {
+    })
+    .then( reponse => reponse.json())
+    .then( function(retour) {
         let id_commande = retour.orderId;
         sessionStorage.setItem("id_commande",id_commande);
         viderPanier();

@@ -59,5 +59,3 @@ fetch(`http://localhost:3000/api/cameras/${id_produit}`)
 .then(res => res.json())
 .then( data => afficherProduit(data))
 .then( function() {commanderProduit()})
-
-    

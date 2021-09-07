@@ -33,9 +33,9 @@ function listeId () {
         liste_envoi.push(identifiant.toString());
         i++;
         if (i>=valeur) { 
-            return liste_envoi;}
+            return liste_envoi;
         }
-    )
+    })
     return liste_envoi;
 }
 
@@ -45,7 +45,8 @@ function ajouterLigne(data, lentille, nombre, index) {
     let tableau = document.getElementById("tableau");
     let newLine = document.createElement("tr");
     newLine.classList.add("panier__contenu__table__ligne");
-    newLine.innerHTML = `<td>${nom}</td>
+    newLine.innerHTML = `
+        <td>${nom}</td>
         <td>${lentille}</td>
         <td>${nombre}</td>
         <td>${prix},00 €</td>
@@ -86,20 +87,19 @@ function prepareFormulaire () {
 
 if ( panier.length === 0) {
     bloc.innerHTML = `
-            <p>Votre Panier est vide!</p>
-            <a href="index.html" class="bouton panier__contenu__retour">Retour à l'accueil</a>`;
+        <p>Votre Panier est vide!</p>
+        <a href="index.html" class="bouton panier__contenu__retour">Retour à l'accueil</a>`;
     document.getElementById("formulaire").innerHTML = "";
 } else {
     bloc.innerHTML = `
         <table class="panier__contenu__table" id="tableau">
-        <tr class="panier__contenu__table__ligne">
-            <th>Nom du produit</th>
-            <th>Lentille personnalisée</th>
-            <th>Quantité voulue</th>
-            <th>Prix</th>
-        </tr>
-        </table>
-    `;
+            <tr class="panier__contenu__table__ligne">
+                <th>Nom du produit</th>
+                <th>Lentille personnalisée</th>
+                <th>Quantité voulue</th>
+                <th>Prix</th>
+            </tr>
+        </table>`;
     panier.forEach((element,index) => {
         const identifiant = element.id;
         const lentille = element.lens;
@@ -112,4 +112,3 @@ if ( panier.length === 0) {
     let bouton_envoi = document.getElementById("confirm");
     bouton_envoi.addEventListener("click", prepareFormulaire)
 }
-
