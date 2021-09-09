@@ -6,8 +6,7 @@ function recupererPanier () {
 
 function existeDansPanier (id_check,lens_check) {
     let present = false;
-    let panier_json = sessionStorage.getItem("panier");
-    let panier = panier_json===null?[]:JSON.parse(panier_json);
+    let panier = recupererPanier();
     panier.forEach(element => {
         if (element.id == id_check && element.lens == lens_check) {
             present = true;
@@ -16,10 +15,8 @@ function existeDansPanier (id_check,lens_check) {
     return present;
 }
 
-//On ajoute un élément dans le panier
 function ajouterPanier (id_produit,itemLens,quantity) {
-    let panier_json = sessionStorage.getItem("panier");
-    let panier = panier_json===null?[]:JSON.parse(panier_json);
+    let panier = recupererPanier();
     if (existeDansPanier(id_produit,itemLens)) {
         panier.forEach(element => {
             if (element.id == id_produit || element.lens == itemLens) {
@@ -42,9 +39,8 @@ function viderPanier() {
     sessionStorage.removeItem("panier");
 }
 
-function retirer_element_panier(index) {
-    let panier_json = sessionStorage.getItem("panier");
-    let panier = panier_json===null?[]:JSON.parse(panier_json);
+function retirerElementPanier(index) {
+    let panier = recupererPanier();
     panier.splice(index, 1);
     let newPanier = JSON.stringify(panier);
     sessionStorage.setItem("panier",newPanier);

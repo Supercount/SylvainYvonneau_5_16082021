@@ -56,7 +56,7 @@ function ajouterLigne(data, element, index) {
     tableau.appendChild(newLine);
     total = calculertotal();
     document.getElementById(`corbeille-${index}`).addEventListener("click",function() {
-        retirer_element_panier(index);
+        retirerElementPanier(index);
         document.location.href="panier.html";
     })
 }
