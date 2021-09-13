@@ -19,7 +19,7 @@ function ajouterPanier (id_produit,itemLens,quantity) {
     let panier = recupererPanier();
     if (existeDansPanier(id_produit,itemLens)) {
         panier.forEach(element => {
-            if (element.id == id_produit || element.lens == itemLens) {
+            if (element.id == id_produit && element.lens == itemLens) {
                 element.quantite += parseInt(quantity);
             }
         })

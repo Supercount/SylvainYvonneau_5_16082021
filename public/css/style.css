@@ -158,20 +158,22 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   font-size: 18px;
 }
 .produit__bloc {
   width: 50%;
+  min-width: 300px;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin: auto;
 }
 .produit__bloc--description {
   text-align: left;
   max-width: 40%;
   padding: 20px;
-  margin: auto;
   background-color: #f3e9f1;
   border-radius: 20px;
 }

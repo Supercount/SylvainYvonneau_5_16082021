@@ -78,10 +78,8 @@ function prepareFormulaire () {
     city = document.getElementById("city").value;
     email = document.getElementById("email").value;
     liste_envoi = listeId();
-    console.log("liste des id après fonction " + liste_envoi)
     if (validerFormulaire(firstName,lastName,adress,city,email)) {
         envoiFormulaire(firstName,lastName,adress,city,email,liste_envoi);
-        document.location.href="validation.html";
     } else {
         alert("Formulaire invalide");
     }

@@ -18,10 +18,11 @@ function envoiFormulaire (prenom,nom,adresse,ville,mail,panier) {
         body: JSON.stringify(requete_envoi)
     })
     .then( reponse => reponse.json())
-    .then( function(retour) {
+    .then( function (retour) {
         let id_commande = retour.orderId;
         sessionStorage.setItem("id_commande",id_commande);
         viderPanier();
+        document.location.href="validation.html";
     });
 }
 
